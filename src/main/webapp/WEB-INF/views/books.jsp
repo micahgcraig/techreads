@@ -8,10 +8,10 @@
 <c:if test="${not empty books}">
     <ul>
         <c:forEach var="book" items="${books}">
+            <label>Cover:</label>
+            <img src="<c:out value="${book.coverURL}" />" alt="cover image" width="500" height="500" />
+            <br/>
             <li>
-                <label>Cover:</label>
-                <img src="<c:out value="${book.coverURL}"/>" width="500" height="500" />
-                <br/>
                 <label>Title:</label>
                 <c:out value="${book.title}"/>
                 <br/>

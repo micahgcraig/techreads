@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class Book {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String title;
     String author;
@@ -19,17 +19,18 @@ public class Book {
 
     public Book() {}
 
-    public Book(String title, String author, Integer rating,String coverURL,  String description){
+    public Book(String title, String author, Integer rating, String coverURL, String description){
         this.title = title;
         this.author = author;
         this.rating = rating;
         this.coverURL = coverURL;
         this.description = description;
-
     }
 
-    public Long getId(){return id;}
-    public void setId(Long id){this.id = id;}
+    public Book(Book response) {
+    }
+
+
 
     public String getTitle() { return title;}
     public void setTitle(String title){ this.title = title;}
@@ -46,8 +47,10 @@ public class Book {
     public String getCoverURL() {
         return coverURL;
     }
-
     public void setCoverURL(String coverURL) {
         this.coverURL = coverURL;
     }
+
+    public Long getId(){return id;}
+    public void setId(Long id){this.id = id;}
 }

@@ -19,7 +19,7 @@
     <form:input path="author" type="text" />
     <br/>
     <label>Rating</label>
-    <form:input path="rating" type="text"/>
+    <form:input path="rating" min="0" max="10" type="number"/>
     <br/>
     <label>Description</label>
     <form:input path="description" type="text"/>
